@@ -7,10 +7,11 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct DayPlanner: View {
     
      @State private var searchText: String = ""
      @State private var presentSheet: Bool = false
+    
     var body: some View {
         
         NavigationStack{
@@ -57,6 +58,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        DayPlanner()
     }
 }

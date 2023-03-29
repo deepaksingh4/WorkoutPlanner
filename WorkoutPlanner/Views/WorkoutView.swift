@@ -39,7 +39,7 @@ struct WorkoutView: View{
         .padding(16)
         .background(Color("background"))
         .clipShape(RoundedRectangle(cornerRadius: 8))
-        .shadow(color: Color("background"), radius: 2)
+        .shadow(color: Color("darkGray"), radius: 1)
         
     }
 }
