@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		000B017829D5AFA9009E9BF1 /* AddSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000B017729D5AFA9009E9BF1 /* AddSetView.swift */; };
 		D9457E7329D2DB6100F182B8 /* WorkoutPlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9457E7229D2DB6100F182B8 /* WorkoutPlannerApp.swift */; };
 		D9457E7529D2DB6100F182B8 /* DayPlanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9457E7429D2DB6100F182B8 /* DayPlanner.swift */; };
 		D9457E7729D2DB6300F182B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9457E7629D2DB6300F182B8 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		000B017729D5AFA9009E9BF1 /* AddSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSetView.swift; sourceTree = "<group>"; };
 		D9457E6F29D2DB6100F182B8 /* WorkoutPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9457E7229D2DB6100F182B8 /* WorkoutPlannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPlannerApp.swift; sourceTree = "<group>"; };
 		D9457E7429D2DB6100F182B8 /* DayPlanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPlanner.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			children = (
 				D9457E8129D2FC4700F182B8 /* WorkoutView.swift */,
 				D9457E8729D3097800F182B8 /* AddWorkout.swift */,
+				000B017729D5AFA9009E9BF1 /* AddSetView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				D9457E8429D2FC6500F182B8 /* WorkoutModel.swift in Sources */,
 				D9DCEF3929D4497300A659FD /* WorkoutDayPlan.swift in Sources */,
 				D9457E8229D2FC4700F182B8 /* WorkoutView.swift in Sources */,
+				000B017829D5AFA9009E9BF1 /* AddSetView.swift in Sources */,
 				D9457E8829D3097800F182B8 /* AddWorkout.swift in Sources */,
 				D9457E8629D2FCEC00F182B8 /* WorkoutSource.swift in Sources */,
 				D9457E7329D2DB6100F182B8 /* WorkoutPlannerApp.swift in Sources */,

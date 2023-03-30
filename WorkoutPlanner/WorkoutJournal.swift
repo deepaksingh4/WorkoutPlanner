@@ -24,44 +24,28 @@ struct WorkoutJournal: View {
                     .foregroundColor(.gray)
                     .padding(8)
             }
-           
         }else{
             VStack{
                 HStack{
                     Spacer()
-                    Circle()
-                        .foregroundColor(.red)
-                        .frame(width: 25)
-                    Circle()
-                        .foregroundColor(.green)
-                        .frame(width: 25)
-                    Image(systemName: "checkmark.circle.fill")
-                        .font(.system(size: 25))
-                        .foregroundColor(.green)
-                    Circle()
-                        .foregroundColor(.green)
-                        .frame(width: 40)
-                    Circle()
-                        .foregroundColor(.green)
-                        .frame(width: 25)
-                    Circle()
-                        .foregroundColor(.green)
-                        .frame(width: 25)
-                    Circle()
-                        .foregroundColor(.green)
-                        .frame(width: 25)
+                    DailyThumbnailView(workoutState: .missed)
+                    DailyThumbnailView(workoutState: .done)
+                    DailyThumbnailView(workoutState: .done)
+                    DailyThumbnailView(workoutState: .current)
+                    DailyThumbnailView(workoutState: .planned)
+                    DailyThumbnailView(workoutState: .planned)
+                    DailyThumbnailView(workoutState: .notPlanned)
                     Spacer()
                     Image(systemName: "plus")
                         .font(.system(size: 25))
-                        .foregroundColor(.green)
+                        .foregroundColor(.blue)
                 }.padding(16)
                 List(0..<2){ _ in
-                    WorkoutView()
+                    WorkoutView(allowEdit: true)
                         .listRowSeparator(.hidden)
                 }.listStyle(.plain)
             }
         }
-        
     }
 }
 
@@ -77,6 +61,8 @@ enum WorkoutState{
     case done
     case planned
     case current
+    case rest
+    case notPlanned
 }
 
 struct DailyThumbnailView: View {
@@ -88,6 +74,7 @@ struct DailyThumbnailView: View {
             Circle()
                 .foregroundColor(.red)
                 .frame(width: 25)
+                .hoverEffect(.lift)
         case .done:
             Image(systemName: "checkmark.circle.fill")
                 .font(.system(size: 25))
@@ -100,6 +87,15 @@ struct DailyThumbnailView: View {
             Circle()
                 .foregroundColor(.green)
                 .frame(width: 40)
+        case .rest:
+            Circle()
+                .foregroundColor(.yellow)
+                .frame(width: 25)
+        case .notPlanned:
+            Circle()
+                .foregroundColor(.gray)
+                .frame(width: 25)
+                
         }
         
     }
