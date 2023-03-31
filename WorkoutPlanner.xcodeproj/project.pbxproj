@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		000B017829D5AFA9009E9BF1 /* AddSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000B017729D5AFA9009E9BF1 /* AddSetView.swift */; };
+		D916B7CC29D6B7AC001C4E46 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D916B7CB29D6B7AC001C4E46 /* Constants.swift */; };
+		D916B7D029D6CB74001C4E46 /* WorkoutJournel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D916B7CE29D6CB74001C4E46 /* WorkoutJournel.xcdatamodeld */; };
+		D916B7D229D6CCB6001C4E46 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D916B7D129D6CCB6001C4E46 /* DataController.swift */; };
 		D9457E7329D2DB6100F182B8 /* WorkoutPlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9457E7229D2DB6100F182B8 /* WorkoutPlannerApp.swift */; };
 		D9457E7529D2DB6100F182B8 /* DayPlanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9457E7429D2DB6100F182B8 /* DayPlanner.swift */; };
 		D9457E7729D2DB6300F182B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9457E7629D2DB6300F182B8 /* Assets.xcassets */; };
@@ -22,6 +25,9 @@
 
 /* Begin PBXFileReference section */
 		000B017729D5AFA9009E9BF1 /* AddSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSetView.swift; sourceTree = "<group>"; };
+		D916B7CB29D6B7AC001C4E46 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D916B7CF29D6CB74001C4E46 /* WorkoutJournel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WorkoutJournel.xcdatamodel; sourceTree = "<group>"; };
+		D916B7D129D6CCB6001C4E46 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		D9457E6F29D2DB6100F182B8 /* WorkoutPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9457E7229D2DB6100F182B8 /* WorkoutPlannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPlannerApp.swift; sourceTree = "<group>"; };
 		D9457E7429D2DB6100F182B8 /* DayPlanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPlanner.swift; sourceTree = "<group>"; };
@@ -46,6 +52,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D916B7CD29D6CB50001C4E46 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				D916B7CE29D6CB74001C4E46 /* WorkoutJournel.xcdatamodeld */,
+				D916B7D129D6CCB6001C4E46 /* DataController.swift */,
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
 		D9457E6629D2DB6100F182B8 = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +80,7 @@
 		D9457E7129D2DB6100F182B8 /* WorkoutPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				D916B7CD29D6CB50001C4E46 /* DataModels */,
 				D9457E8029D2FC1000F182B8 /* Views */,
 				D9457E7229D2DB6100F182B8 /* WorkoutPlannerApp.swift */,
 				D9457E7429D2DB6100F182B8 /* DayPlanner.swift */,
@@ -73,6 +89,7 @@
 				D9DCEF3729D4495700A659FD /* Models */,
 				D9457E8529D2FCEC00F182B8 /* WorkoutSource.swift */,
 				D9DCEF3529D4322500A659FD /* WorkoutJournal.swift */,
+				D916B7CB29D6B7AC001C4E46 /* Constants.swift */,
 			);
 			path = WorkoutPlanner;
 			sourceTree = "<group>";
@@ -175,10 +192,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9DCEF3629D4322500A659FD /* WorkoutJournal.swift in Sources */,
+				D916B7D229D6CCB6001C4E46 /* DataController.swift in Sources */,
 				D9457E7529D2DB6100F182B8 /* DayPlanner.swift in Sources */,
+				D916B7D029D6CB74001C4E46 /* WorkoutJournel.xcdatamodeld in Sources */,
 				D9457E8429D2FC6500F182B8 /* WorkoutModel.swift in Sources */,
 				D9DCEF3929D4497300A659FD /* WorkoutDayPlan.swift in Sources */,
 				D9457E8229D2FC4700F182B8 /* WorkoutView.swift in Sources */,
+				D916B7CC29D6B7AC001C4E46 /* Constants.swift in Sources */,
 				000B017829D5AFA9009E9BF1 /* AddSetView.swift in Sources */,
 				D9457E8829D3097800F182B8 /* AddWorkout.swift in Sources */,
 				D9457E8629D2FCEC00F182B8 /* WorkoutSource.swift in Sources */,
@@ -311,6 +331,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WorkoutPlanner/Preview Content\"";
+				DEVELOPMENT_TEAM = Y625B3AW8X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -325,6 +346,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dex.WorkoutPlanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -339,6 +363,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WorkoutPlanner/Preview Content\"";
+				DEVELOPMENT_TEAM = Y625B3AW8X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -353,6 +378,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dex.WorkoutPlanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -381,6 +409,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D916B7CE29D6CB74001C4E46 /* WorkoutJournel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D916B7CF29D6CB74001C4E46 /* WorkoutJournel.xcdatamodel */,
+			);
+			currentVersion = D916B7CF29D6CB74001C4E46 /* WorkoutJournel.xcdatamodel */;
+			path = WorkoutJournel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D9457E6729D2DB6100F182B8 /* Project object */;
 }

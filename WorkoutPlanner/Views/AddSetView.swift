@@ -10,12 +10,14 @@ import SwiftUI
 struct AddSetView: View {
     @State private var numberOfReps: String = ""
     @State private var weight: String = ""
+    @Binding var dismissView: Bool
     
     var body: some View {
         VStack{
             HStack{
                 Button {
                     print("Cancel")
+                    dismissView.toggle()
                 } label: {
                     Text("Cancel")
                         .foregroundColor(.red)
@@ -25,6 +27,8 @@ struct AddSetView: View {
                 Spacer()
                 Button {
                     print("Done")
+                    //save the data
+                    dismissView.toggle()
                 } label: {
                     Text("Done")
                         .foregroundColor(.blue)
@@ -57,6 +61,6 @@ struct AddSetView: View {
 
 struct AddSetView_Previews: PreviewProvider {
     static var previews: some View {
-        AddSetView()
+        AddSetView(dismissView: .constant(true))
     }
 }

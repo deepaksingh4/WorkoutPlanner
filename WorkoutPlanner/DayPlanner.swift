@@ -16,6 +16,7 @@ struct DayPlanner: View {
         
         NavigationStack{
             ZStack{
+                
                 List(1..<10){ index in
                     ZStack {
                         WorkoutView()
@@ -27,7 +28,6 @@ struct DayPlanner: View {
                 }
                 .listStyle(.grouped)
                 .scrollContentBackground(.hidden)
-                .searchable(text: $searchText)
                 
                 GeometryReader { context in
                     Button {
@@ -50,6 +50,7 @@ struct DayPlanner: View {
                 }
                 
             }
+            .navigationTitle("Workouts")
         }
         .ignoresSafeArea()
     }

@@ -41,10 +41,11 @@ struct WorkoutView: View{
                         .clipShape(Rectangle())
                 }.buttonStyle(.plain)
                     .sheet(isPresented: $isEditing){
-                        AddSetView()
+                        AddSetView(dismissView: $isEditing)
                             .shadow(radius: 1)
                             .presentationDetents([.fraction(0.25)])
                     }
+                
             }
         }
         .background(Color("background"))
