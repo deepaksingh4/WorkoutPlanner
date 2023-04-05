@@ -28,6 +28,7 @@
 		D916B7CB29D6B7AC001C4E46 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D916B7CF29D6CB74001C4E46 /* WorkoutJournel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WorkoutJournel.xcdatamodel; sourceTree = "<group>"; };
 		D916B7D129D6CCB6001C4E46 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		D932840E29DD89AE00A507E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D9457E6F29D2DB6100F182B8 /* WorkoutPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9457E7229D2DB6100F182B8 /* WorkoutPlannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPlannerApp.swift; sourceTree = "<group>"; };
 		D9457E7429D2DB6100F182B8 /* DayPlanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPlanner.swift; sourceTree = "<group>"; };
@@ -37,6 +38,7 @@
 		D9457E8329D2FC6500F182B8 /* WorkoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutModel.swift; sourceTree = "<group>"; };
 		D9457E8529D2FCEC00F182B8 /* WorkoutSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSource.swift; sourceTree = "<group>"; };
 		D9457E8729D3097800F182B8 /* AddWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkout.swift; sourceTree = "<group>"; };
+		D96EA7F429DD8EFE004C7166 /* WorkoutPlanner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WorkoutPlanner.entitlements; sourceTree = "<group>"; };
 		D9DCEF3529D4322500A659FD /* WorkoutJournal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutJournal.swift; sourceTree = "<group>"; };
 		D9DCEF3829D4497300A659FD /* WorkoutDayPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDayPlan.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +82,8 @@
 		D9457E7129D2DB6100F182B8 /* WorkoutPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				D96EA7F429DD8EFE004C7166 /* WorkoutPlanner.entitlements */,
+				D932840E29DD89AE00A507E7 /* Info.plist */,
 				D916B7CD29D6CB50001C4E46 /* DataModels */,
 				D9457E8029D2FC1000F182B8 /* Views */,
 				D9457E7229D2DB6100F182B8 /* WorkoutPlannerApp.swift */,
@@ -328,24 +332,33 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = WorkoutPlanner/WorkoutPlanner.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WorkoutPlanner/Preview Content\"";
-				DEVELOPMENT_TEAM = Y625B3AW8X;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = FVKMJT46KC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WorkoutPlanner/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Workal;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dex.WorkoutPlanner;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dex.WorkoutPlanner1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = WorkoutPlan;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -360,24 +373,33 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = WorkoutPlanner/WorkoutPlanner.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WorkoutPlanner/Preview Content\"";
-				DEVELOPMENT_TEAM = Y625B3AW8X;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = FVKMJT46KC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WorkoutPlanner/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Workal;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dex.WorkoutPlanner;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dex.WorkoutPlanner1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = WorkoutPlan;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
