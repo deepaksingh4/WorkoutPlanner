@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22D68" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Journal" representedClassName="Journal" syncable="YES" codeGenerationType="class">
+    <entity name="Journal" representedClassName="Journal" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <entity name="WokroutPlan" representedClassName="WokroutPlan" syncable="YES" codeGenerationType="class">
         <attribute name="day" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <relationship name="workout" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Workouts"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="workout" optional="YES" toMany="YES" deletionRule="No Action" ordered="YES" destinationEntity="Workout"/>
     </entity>
-    <entity name="Workouts" representedClassName="Workouts" syncable="YES" codeGenerationType="class">
+    <entity name="Workout" representedClassName="Workout" syncable="YES" codeGenerationType="class">
         <attribute name="details" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="muscle" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="workoutPlan" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WokroutPlan"/>
     </entity>
 </model>

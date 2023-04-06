@@ -15,7 +15,7 @@ struct WorkoutModel{
     var targetBodyMuscle: BodyMuscle
 }
 
-enum BodyMuscle{
+enum BodyMuscle: String{
     case Chest
     case Biceps
     case Triceps
