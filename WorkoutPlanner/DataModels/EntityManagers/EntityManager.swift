@@ -31,7 +31,7 @@ class CoreEntityManager<T: NSManagedObject>{
         }
     }
     
-    func fetchRecords(predicate: NSPredicate) -> [T] {
+    func fetchEntities(predicate: NSPredicate) -> [T] {
         let request = NSFetchRequest<T>()
         request.entity = T.entity()
         request.predicate = predicate
@@ -45,8 +45,9 @@ class CoreEntityManager<T: NSManagedObject>{
         return results
     }
     
-    func deleteRecord(toBeDeleted: T){
+    func deleteEntity(toBeDeleted: T){
           context.delete(toBeDeleted)
     }
+    
     
 }

@@ -7,14 +7,6 @@
 
 import Foundation
 
-struct WorkoutEntityManager: EntityManager {
-    typealias T = self
-    
-    func save() {
-        <#code#>
-    }
-    
-    var dataController: DataController
-    
-    
+struct WorkoutEntityManager {
+    let manager: CoreEntityManager<Workout> = CoreEntityManager()
 }
