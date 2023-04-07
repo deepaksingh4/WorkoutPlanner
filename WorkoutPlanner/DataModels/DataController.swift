@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-protocol DataManager{
+protocol DataController{
     var context: NSManagedObjectContext {get}
-    var container: NSPersistentContainer {set}
+    var container: NSPersistentContainer {set get}
 }

@@ -9,12 +9,23 @@ import Foundation
 import CoreData
 import Combine
  
-struct CoreDataManager: DataManager{
+class CoreDataManager: DataController{
     var container: NSPersistentContainer = NSPersistentContainer(name: "WorkoutContainer")
     var context: NSManagedObjectContext
     {
         get {
             return container.viewContext
+        }
+    }
+    
+    
+    init() {
+        container.loadPersistentStores { desc, error in
+            guard error != nil else{
+                print("Loaded successfully ")
+                return
+            }
+            print("Unable to load")
         }
     }
     

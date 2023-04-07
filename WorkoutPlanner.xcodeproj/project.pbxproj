@@ -13,6 +13,8 @@
 		D916B7D229D6CCB6001C4E46 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D916B7D129D6CCB6001C4E46 /* CoreDataController.swift */; };
 		D92975F029DEBE8A00F822FB /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92975EF29DEBE8A00F822FB /* DataController.swift */; };
 		D92975F329DEDFF100F822FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92975F229DEDFF100F822FB /* AppDelegate.swift */; };
+		D92975F529E02E3200F822FB /* EntityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92975F429E02E3200F822FB /* EntityManager.swift */; };
+		D92975F729E0305100F822FB /* WorkoutEntityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92975F629E0305100F822FB /* WorkoutEntityManager.swift */; };
 		D9457E7329D2DB6100F182B8 /* WorkoutPlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9457E7229D2DB6100F182B8 /* WorkoutPlannerApp.swift */; };
 		D9457E7529D2DB6100F182B8 /* DayPlanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9457E7429D2DB6100F182B8 /* DayPlanner.swift */; };
 		D9457E7729D2DB6300F182B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9457E7629D2DB6300F182B8 /* Assets.xcassets */; };
@@ -33,6 +35,8 @@
 		D92975EF29DEBE8A00F822FB /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		D92975F129DED55800F822FB /* WorkoutPlannerDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WorkoutPlannerDebug.entitlements; sourceTree = "<group>"; };
 		D92975F229DEDFF100F822FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D92975F429E02E3200F822FB /* EntityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityManager.swift; sourceTree = "<group>"; };
+		D92975F629E0305100F822FB /* WorkoutEntityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutEntityManager.swift; sourceTree = "<group>"; };
 		D932840E29DD89AE00A507E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D9457E6F29D2DB6100F182B8 /* WorkoutPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9457E7229D2DB6100F182B8 /* WorkoutPlannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPlannerApp.swift; sourceTree = "<group>"; };
@@ -73,6 +77,8 @@
 		D92975EE29DEBE6400F822FB /* EntityManagers */ = {
 			isa = PBXGroup;
 			children = (
+				D92975F429E02E3200F822FB /* EntityManager.swift */,
+				D92975F629E0305100F822FB /* WorkoutEntityManager.swift */,
 			);
 			path = EntityManagers;
 			sourceTree = "<group>";
@@ -216,8 +222,10 @@
 				D9457E7529D2DB6100F182B8 /* DayPlanner.swift in Sources */,
 				D916B7D029D6CB74001C4E46 /* WorkoutContainer.xcdatamodeld in Sources */,
 				D92975F329DEDFF100F822FB /* AppDelegate.swift in Sources */,
+				D92975F529E02E3200F822FB /* EntityManager.swift in Sources */,
 				D9457E8429D2FC6500F182B8 /* WorkoutModel.swift in Sources */,
 				D9DCEF3929D4497300A659FD /* WorkoutDayPlan.swift in Sources */,
+				D92975F729E0305100F822FB /* WorkoutEntityManager.swift in Sources */,
 				D9457E8229D2FC4700F182B8 /* WorkoutView.swift in Sources */,
 				D916B7CC29D6B7AC001C4E46 /* Constants.swift in Sources */,
 				000B017829D5AFA9009E9BF1 /* AddSetView.swift in Sources */,
