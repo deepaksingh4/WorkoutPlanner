@@ -18,8 +18,10 @@ class CoreDataManager: DataController{
         }
     }
     
+    static let instance = CoreDataManager()
     
-    init() {
+    
+    private init() {
         container.loadPersistentStores { desc, error in
             guard error != nil else{
                 print("Loaded successfully ")

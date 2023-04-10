@@ -8,14 +8,6 @@
 import Foundation
 import CoreData
 
-//protocol EntityManager{
-//    associatedtype T
-//    func save()
-//    func fetch() -> [T]
-//    var dataController: DataController {get set}
-//}
-
-
 class CoreEntityManager<T: NSManagedObject>{
     var context: NSManagedObjectContext
     
@@ -31,7 +23,7 @@ class CoreEntityManager<T: NSManagedObject>{
         }
     }
     
-    func fetchEntities(predicate: NSPredicate) -> [T] {
+    func fetchEntities(predicate: NSPredicate = NSPredicate()) -> [T] {
         let request = NSFetchRequest<T>()
         request.entity = T.entity()
         request.predicate = predicate

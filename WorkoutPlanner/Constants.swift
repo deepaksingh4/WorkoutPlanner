@@ -4,6 +4,7 @@
 //
 //  Created by Deepak Singh07 on 3/31/23.
 //
+//Crunches Gym Equipment by Gan Khoon Lay from <a href="https://thenounproject.com/browse/icons/term/crunches-gym-equipment/" target="_blank" title="Crunches Gym Equipment Icons">Noun Project</a>
 
 import Foundation
 
@@ -25,3 +26,21 @@ enum bodyParts: String{
     case traps
     case triceps
 }
+
+
+func getAllWorkoutImages() -> [WorkoutImage]{
+    let fileManager = FileManager.default
+    
+    guard let filePath = Bundle.main.path(forResource: "workoutImages", ofType: nil) else{
+        return []
+    }
+    
+    let content = try? fileManager.contentsOfDirectory(atPath: filePath)
+    
+    print(content)
+    return []
+    
+    
+}
+
+

@@ -8,11 +8,13 @@
 import Foundation
 
 struct WorkoutModel{
-    var name: String
-    var iconImage: String
-    var sets: Sets?
-    var videoURL: String?
-    var targetBodyMuscle: BodyMuscle
+    let name: String
+    let iconImage: String
+    let sets: Sets?
+    let videoURL: String?
+    let description: String
+    let id: UUID
+    let targetBodyMuscle: BodyMuscle
 }
 
 enum BodyMuscle: String{
@@ -27,6 +29,6 @@ enum BodyMuscle: String{
 }
 
 struct Sets{
-    var count: Int
-    var weight: Int
+    let count: Int
+    let weight: Int
 }

@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.developer.associated-domains</key>
 	<array>
-		<string>applinks:testbucket202304055103.s3-website.us-east-2.amazonaws.com</string>
+		<string>applinks:github.com/deepaksingh4/expense_manager</string>
 	</array>
 </dict>
 </plist>

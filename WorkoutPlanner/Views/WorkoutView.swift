@@ -41,9 +41,13 @@ struct WorkoutView: View{
                         .clipShape(Rectangle())
                 }.buttonStyle(.plain)
                     .sheet(isPresented: $isEditing){
-                        AddSetView(dismissView: $isEditing)
-                            .shadow(radius: 1)
-                            .presentationDetents([.fraction(0.25)])
+                        if #available(iOS 16.0, *) {
+                            AddSetView(dismissView: $isEditing)
+                                .shadow(radius: 1)
+                                .presentationDetents([.fraction(0.25)])
+                        } else {
+                            // Fallback on earlier versions
+                        }
                     }
                 
             }

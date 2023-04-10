@@ -25,6 +25,10 @@
 		D9457E8829D3097800F182B8 /* AddWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9457E8729D3097800F182B8 /* AddWorkout.swift */; };
 		D9DCEF3629D4322500A659FD /* WorkoutJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCEF3529D4322500A659FD /* WorkoutJournal.swift */; };
 		D9DCEF3929D4497300A659FD /* WorkoutDayPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCEF3829D4497300A659FD /* WorkoutDayPlan.swift */; };
+		D9FBA3D629E421BA005D1CC6 /* WorkoutImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FBA3D529E421BA005D1CC6 /* WorkoutImagesView.swift */; };
+		D9FBA3DB29E43348005D1CC6 /* pull-up.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FBA3D829E43348005D1CC6 /* pull-up.png */; };
+		D9FBA3DC29E43348005D1CC6 /* punch.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FBA3D929E43348005D1CC6 /* punch.png */; };
+		D9FBA3DD29E43348005D1CC6 /* crunch.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FBA3DA29E43348005D1CC6 /* crunch.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +54,10 @@
 		D96EA7F429DD8EFE004C7166 /* WorkoutPlanner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WorkoutPlanner.entitlements; sourceTree = "<group>"; };
 		D9DCEF3529D4322500A659FD /* WorkoutJournal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutJournal.swift; sourceTree = "<group>"; };
 		D9DCEF3829D4497300A659FD /* WorkoutDayPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDayPlan.swift; sourceTree = "<group>"; };
+		D9FBA3D529E421BA005D1CC6 /* WorkoutImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutImagesView.swift; sourceTree = "<group>"; };
+		D9FBA3D829E43348005D1CC6 /* pull-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pull-up.png"; sourceTree = "<group>"; };
+		D9FBA3D929E43348005D1CC6 /* punch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = punch.png; sourceTree = "<group>"; };
+		D9FBA3DA29E43348005D1CC6 /* crunch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crunch.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +110,7 @@
 		D9457E7129D2DB6100F182B8 /* WorkoutPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				D9FBA3D729E43326005D1CC6 /* workoutImages */,
 				D92975F129DED55800F822FB /* WorkoutPlannerDebug.entitlements */,
 				D96EA7F429DD8EFE004C7166 /* WorkoutPlanner.entitlements */,
 				D932840E29DD89AE00A507E7 /* Info.plist */,
@@ -134,6 +143,7 @@
 				D9457E8129D2FC4700F182B8 /* WorkoutView.swift */,
 				D9457E8729D3097800F182B8 /* AddWorkout.swift */,
 				000B017729D5AFA9009E9BF1 /* AddSetView.swift */,
+				D9FBA3D529E421BA005D1CC6 /* WorkoutImagesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -145,6 +155,16 @@
 				D9DCEF3829D4497300A659FD /* WorkoutDayPlan.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D9FBA3D729E43326005D1CC6 /* workoutImages */ = {
+			isa = PBXGroup;
+			children = (
+				D9FBA3DA29E43348005D1CC6 /* crunch.png */,
+				D9FBA3D829E43348005D1CC6 /* pull-up.png */,
+				D9FBA3D929E43348005D1CC6 /* punch.png */,
+			);
+			path = workoutImages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,7 +225,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9FBA3DD29E43348005D1CC6 /* crunch.png in Resources */,
+				D9FBA3DB29E43348005D1CC6 /* pull-up.png in Resources */,
 				D9457E7A29D2DB6300F182B8 /* Preview Assets.xcassets in Resources */,
+				D9FBA3DC29E43348005D1CC6 /* punch.png in Resources */,
 				D9457E7729D2DB6300F182B8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,6 +243,7 @@
 				D9DCEF3629D4322500A659FD /* WorkoutJournal.swift in Sources */,
 				D916B7D229D6CCB6001C4E46 /* CoreDataController.swift in Sources */,
 				D9457E7529D2DB6100F182B8 /* DayPlanner.swift in Sources */,
+				D9FBA3D629E421BA005D1CC6 /* WorkoutImagesView.swift in Sources */,
 				D916B7D029D6CB74001C4E46 /* WorkoutContainer.xcdatamodeld in Sources */,
 				D92975F329DEDFF100F822FB /* AppDelegate.swift in Sources */,
 				D92975F529E02E3200F822FB /* EntityManager.swift in Sources */,
@@ -375,7 +399,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -416,7 +440,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

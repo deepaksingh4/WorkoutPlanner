@@ -29,14 +29,6 @@ struct AddWorkout: View {
                         Spacer()
                         TextField("Workout Name", text: $workoutName)
                     }
-                    HStack(alignment: .center) {
-                        Text("# Sets")
-                        Spacer()
-                        Text("\(setCount)")
-                        Spacer()
-                        Stepper("", value: $setCount)
-                            .labelsHidden()
-                    }.monospacedDigit()
                 }
                 
                 Spacer()

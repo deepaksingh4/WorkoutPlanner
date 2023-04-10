@@ -11,6 +11,8 @@ import UIKit
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         print("Your code here")
+//        getAllWorkoutImages()
+        callGitAPI()
         return true
     }
     
@@ -27,5 +29,20 @@ class AppDelegate: NSObject, UIApplicationDelegate {
             
             print(urlComponents.queryItems)
         }
+        return true
+    }
+}
+
+func callGitAPI(){
+    if let appURL = URL(string: "https://github.com/deepaksingh4/expense_manager/forgotpassword") {
+        UIApplication.shared.open(appURL) { success in
+            if success {
+                print("The URL was delivered successfully.")
+            } else {
+                print("The URL failed to open.")
+            }
+        }
+    } else {
+        print("Invalid URL specified.")
     }
 }
