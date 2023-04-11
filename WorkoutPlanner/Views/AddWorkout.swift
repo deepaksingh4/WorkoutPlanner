@@ -9,35 +9,31 @@ import SwiftUI
 
 struct AddWorkout: View {
     @State private var workoutName: String = ""
-    @State private var setCount: Int = 0
+    @State private var selected: Int = 0
     var body: some View {
-        
-        VStack(alignment: .center){
-//                Spacer()
-                Image(systemName: "photo.circle.fill")
-                    .renderingMode(.template)
-                    .resizable()
-                    .foregroundColor(Color("background"))
-                    .padding(16)
-                    .frame(width: 100, height: 100)
-                    .background(Color("button"))
-                    .clipShape(Circle())
-//                Spacer()
-                VStack(alignment: .center){
-                    HStack{
-                        Text("Workout Name")
-                        Spacer()
-                        TextField("Workout Name", text: $workoutName)
+        NavigationView {
+            List(0..<1){ index in
+                Section("Select Workout") {
+                    ForEach(0..<5){ index_in in
+                        HStack {
+                            Text("\(index_in)")
+                                .frame(height: 40)
+                                .foregroundColor(Color.white)
+                            
+                            Spacer()
+                        }.listRowBackground(workoutName == "\(index_in)" ? Color.green : Color.teal)
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                workoutName = "\(index_in)"
+                            }
                     }
+                    
                 }
                 
-                Spacer()
-                
-                
-                            
-            }
-            .padding(25)
+            }.listStyle(.sidebar)
         }
+        .searchable(text: $workoutName)
+    }
     
 }
 

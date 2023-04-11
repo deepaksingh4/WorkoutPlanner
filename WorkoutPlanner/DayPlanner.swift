@@ -9,18 +9,20 @@ import SwiftUI
 
 struct DayPlanner: View {
     
-     @State private var searchText: String = ""
-     @State private var presentSheet: Bool = false
+    @ObservedObject var viewModel: DayPlannerViewModel = DayPlannerViewModel()
+    
+    @State private var selectedDay: Int = 1
+    @State private var presentSheet: Bool = false
     
     var body: some View {
         
         NavigationStack{
             ZStack{
                 
-                List(1..<10){ index in
+                List(viewModel.workoutPlans[selectedDay - 1].workouts){ workout in
                     ZStack {
                         WorkoutView()
-                        NavigationLink(destination: Text("aa \(index)")){
+                        NavigationLink(destination: Text("aa \(workout.name)")){
                             EmptyView()
                         }.opacity(0)
                     }
@@ -43,7 +45,7 @@ struct DayPlanner: View {
                     }.padding(.top,context.size.height - 70)
                         .padding(.leading,context.size.width/2 - 29)
                         .sheet(isPresented: $presentSheet) {
-                            Text("csutom")
+                            AddWorkout()
                                 .presentationDetents([.fraction(0.5)])
                                 .presentationDragIndicator(.visible)
                         }
@@ -51,6 +53,18 @@ struct DayPlanner: View {
                 
             }
             .navigationTitle("Workouts")
+            .toolbar {
+                HStack(alignment: .center){
+                    ForEach(viewModel.workoutPlans){ workout in
+                        Text("\(workout.day)")
+                            .padding(2)
+                            .modifier(bgCircleWithStroke(backgroundColor: workout.day == selectedDay ? .green : .yellow , strokeColor: .clear, width: 30))
+                            .onTapGesture {
+                                selectedDay = workout.day
+                            }
+                    }
+                }
+            }
         }
         .ignoresSafeArea()
     }

@@ -21,7 +21,6 @@
 		D9457E7A29D2DB6300F182B8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9457E7929D2DB6300F182B8 /* Preview Assets.xcassets */; };
 		D9457E8229D2FC4700F182B8 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9457E8129D2FC4700F182B8 /* WorkoutView.swift */; };
 		D9457E8429D2FC6500F182B8 /* WorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9457E8329D2FC6500F182B8 /* WorkoutModel.swift */; };
-		D9457E8629D2FCEC00F182B8 /* WorkoutSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9457E8529D2FCEC00F182B8 /* WorkoutSource.swift */; };
 		D9457E8829D3097800F182B8 /* AddWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9457E8729D3097800F182B8 /* AddWorkout.swift */; };
 		D9DCEF3629D4322500A659FD /* WorkoutJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCEF3529D4322500A659FD /* WorkoutJournal.swift */; };
 		D9DCEF3929D4497300A659FD /* WorkoutDayPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCEF3829D4497300A659FD /* WorkoutDayPlan.swift */; };
@@ -29,6 +28,8 @@
 		D9FBA3DB29E43348005D1CC6 /* pull-up.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FBA3D829E43348005D1CC6 /* pull-up.png */; };
 		D9FBA3DC29E43348005D1CC6 /* punch.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FBA3D929E43348005D1CC6 /* punch.png */; };
 		D9FBA3DD29E43348005D1CC6 /* crunch.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FBA3DA29E43348005D1CC6 /* crunch.png */; };
+		D9FBA3DF29E54EDB005D1CC6 /* WorkoutJournalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FBA3DE29E54EDB005D1CC6 /* WorkoutJournalViewModel.swift */; };
+		D9FBA3E129E571B5005D1CC6 /* DayPlannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FBA3E029E571B5005D1CC6 /* DayPlannerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +50,6 @@
 		D9457E7929D2DB6300F182B8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D9457E8129D2FC4700F182B8 /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
 		D9457E8329D2FC6500F182B8 /* WorkoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutModel.swift; sourceTree = "<group>"; };
-		D9457E8529D2FCEC00F182B8 /* WorkoutSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSource.swift; sourceTree = "<group>"; };
 		D9457E8729D3097800F182B8 /* AddWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkout.swift; sourceTree = "<group>"; };
 		D96EA7F429DD8EFE004C7166 /* WorkoutPlanner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WorkoutPlanner.entitlements; sourceTree = "<group>"; };
 		D9DCEF3529D4322500A659FD /* WorkoutJournal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutJournal.swift; sourceTree = "<group>"; };
@@ -58,6 +58,8 @@
 		D9FBA3D829E43348005D1CC6 /* pull-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pull-up.png"; sourceTree = "<group>"; };
 		D9FBA3D929E43348005D1CC6 /* punch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = punch.png; sourceTree = "<group>"; };
 		D9FBA3DA29E43348005D1CC6 /* crunch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crunch.png; sourceTree = "<group>"; };
+		D9FBA3DE29E54EDB005D1CC6 /* WorkoutJournalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutJournalViewModel.swift; sourceTree = "<group>"; };
+		D9FBA3E029E571B5005D1CC6 /* DayPlannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPlannerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,11 +121,12 @@
 				D9457E7229D2DB6100F182B8 /* WorkoutPlannerApp.swift */,
 				D92975F229DEDFF100F822FB /* AppDelegate.swift */,
 				D9457E7429D2DB6100F182B8 /* DayPlanner.swift */,
+				D9FBA3E029E571B5005D1CC6 /* DayPlannerViewModel.swift */,
 				D9457E7629D2DB6300F182B8 /* Assets.xcassets */,
 				D9457E7829D2DB6300F182B8 /* Preview Content */,
 				D9DCEF3729D4495700A659FD /* Models */,
-				D9457E8529D2FCEC00F182B8 /* WorkoutSource.swift */,
 				D9DCEF3529D4322500A659FD /* WorkoutJournal.swift */,
+				D9FBA3DE29E54EDB005D1CC6 /* WorkoutJournalViewModel.swift */,
 				D916B7CB29D6B7AC001C4E46 /* Constants.swift */,
 			);
 			path = WorkoutPlanner;
@@ -248,14 +251,15 @@
 				D92975F329DEDFF100F822FB /* AppDelegate.swift in Sources */,
 				D92975F529E02E3200F822FB /* EntityManager.swift in Sources */,
 				D9457E8429D2FC6500F182B8 /* WorkoutModel.swift in Sources */,
+				D9FBA3E129E571B5005D1CC6 /* DayPlannerViewModel.swift in Sources */,
 				D9DCEF3929D4497300A659FD /* WorkoutDayPlan.swift in Sources */,
 				D92975F729E0305100F822FB /* WorkoutEntityManager.swift in Sources */,
 				D9457E8229D2FC4700F182B8 /* WorkoutView.swift in Sources */,
 				D916B7CC29D6B7AC001C4E46 /* Constants.swift in Sources */,
 				000B017829D5AFA9009E9BF1 /* AddSetView.swift in Sources */,
 				D9457E8829D3097800F182B8 /* AddWorkout.swift in Sources */,
-				D9457E8629D2FCEC00F182B8 /* WorkoutSource.swift in Sources */,
 				D92975F029DEBE8A00F822FB /* DataController.swift in Sources */,
+				D9FBA3DF29E54EDB005D1CC6 /* WorkoutJournalViewModel.swift in Sources */,
 				D9457E7329D2DB6100F182B8 /* WorkoutPlannerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

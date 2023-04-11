@@ -8,25 +8,32 @@
 import SwiftUI
 
 struct WorkoutJournal: View {
-    var workoutPlan: Bool = true
+    @ObservedObject var viewModel: WorkoutJournalViewModel = WorkoutJournalViewModel()
+    
     var body: some View {
-        if workoutPlan{
-            VStack {
-                
-                Image(systemName: "plus")
-                    .foregroundColor(.white)
-                    .font(.system(size: 50))
-                    .padding(16)
-                    .background(Color(.systemYellow))
-                    .clipShape(Circle())
-                    .shadow(radius: 2)
-                    .onTapGesture {
-                        
+        
+        if viewModel.wokroutPlans.count == 0 {
+            
+            NavigationView {
+                VStack {
+                    NavigationLink(destination: DayPlanner()) {
+                        Image(systemName: "plus")
+                            .foregroundColor(.white)
+                            .font(.system(size: 50))
+                            .padding(16)
+                            .background(Color(.systemYellow))
+                            .clipShape(Circle())
+                            .shadow(radius: 2)
                     }
-                Text("Add your workout plan")
-                    .font(.system(size: 14))
-                    .foregroundColor(.gray)
-                    .padding(8)
+                    
+                    
+
+                    Text("Add your workout plan")
+                        .font(.system(size: 14))
+                        .foregroundColor(Theme.Colors.primaryTextColor)
+                        .padding(8)
+                    
+                }
             }
         }else{
             VStack{

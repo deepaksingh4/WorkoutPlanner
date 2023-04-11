@@ -7,6 +7,7 @@
 //Crunches Gym Equipment by Gan Khoon Lay from <a href="https://thenounproject.com/browse/icons/term/crunches-gym-equipment/" target="_blank" title="Crunches Gym Equipment Icons">Noun Project</a>
 
 import Foundation
+import SwiftUI
 
 enum bodyParts: String{
     case abdominals
@@ -39,8 +40,13 @@ func getAllWorkoutImages() -> [WorkoutImage]{
     
     print(content)
     return []
-    
-    
+}
+
+
+struct Theme {
+    struct Colors {
+        static let primaryTextColor = Color("darkGray")
+    }
 }
 
 

@@ -41,7 +41,7 @@ struct WorkoutImage: Identifiable {
 
 //func workoutImages() -> [WorkoutImage]{
 //    let images = []
-//    
+//
 //}
 
 
@@ -49,10 +49,15 @@ struct bgCircleWithStroke: ViewModifier {
     
     let backgroundColor: Color
     let strokeColor: Color
+    var width = 50.0
     
     func body(content: Content) -> some View {
         content
-            .background(Circle().strokeBorder(strokeColor))
+            .background(
+                Circle()
+                .strokeBorder(strokeColor)
+            )
+            .frame(width: width)
             .background(backgroundColor)
             .clipShape(Circle())
     }

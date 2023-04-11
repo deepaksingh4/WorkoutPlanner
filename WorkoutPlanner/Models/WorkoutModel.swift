@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct WorkoutModel{
+struct WorkoutModel: Identifiable{
     let name: String
     let iconImage: String
     let sets: Sets?
