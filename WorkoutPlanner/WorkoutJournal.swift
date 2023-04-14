@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct WorkoutJournal: View {
+    let apiManager = OrignalAPIManager<Response>()
     @ObservedObject var viewModel: WorkoutJournalViewModel = WorkoutJournalViewModel()
     
     var body: some View {
@@ -32,6 +33,11 @@ struct WorkoutJournal: View {
                         .font(.system(size: 14))
                         .foregroundColor(Theme.Colors.primaryTextColor)
                         .padding(8)
+                        .onTapGesture {
+                            viewModel.fetchWorkoutPlans { result in
+                                
+                            }
+                        }
                     
                 }
             }

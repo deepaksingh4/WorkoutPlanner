@@ -19,10 +19,11 @@ struct AddWorkout: View {
                             Text("\(index_in)")
                                 .frame(height: 40)
                                 .foregroundColor(Color.white)
+                                .contentShape(Rectangle())
                             
                             Spacer()
                         }.listRowBackground(workoutName == "\(index_in)" ? Color.green : Color.teal)
-                            .contentShape(Rectangle())
+                            .listRowSeparator(.hidden)
                             .onTapGesture {
                                 workoutName = "\(index_in)"
                             }
@@ -30,11 +31,10 @@ struct AddWorkout: View {
                     
                 }
                 
-            }.listStyle(.sidebar)
+            }.listStyle(.plain)
         }
         .searchable(text: $workoutName)
     }
-    
 }
 
 struct AddWorkout_Previews: PreviewProvider {
