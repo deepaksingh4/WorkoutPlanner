@@ -17,7 +17,7 @@ struct WorkoutEntityManager {
     func saveWorkout(workout: WorkoutModel){
         let workoutEntity = Workout(context: manager.context)
         workoutEntity.name = workout.name
-        workoutEntity.muscle = workout.targetBodyMuscle.rawValue
+//        workoutEntity.muscle = workout.targetBodyMuscle.rawValue
         workoutEntity.details = workout.description
         workoutEntity.id = workout.id
         manager.save()
@@ -32,24 +32,35 @@ struct WorkoutEntityManager {
                 videoURL: nil,
                 description: workout.description,
                 id: workout.id!,
-                targetBodyMuscle: BodyMuscle(rawValue: workout.muscle!) ?? .Back
+                targetBodyMuscle:  .Back
             )
         }
         return workouts
     }
     
-    func deleteWorkout(workout: WorkoutModel) {
-        if let toBeDeleted = manager.fetchEntities(predicate: NSPredicate(format: "id == %@", workout.id as CVarArg)).first {
-            manager.deleteEntity(toBeDeleted: toBeDeleted)
-        }
-    }
+//    func deleteWorkout(workout: WorkoutModel) {
+//        if let toBeDeleted = manager.fetchEntities(predicate: NSPredicate(format: "id == %@", workout.id as CVarArg)).first {
+//            manager.deleteEntity(toBeDeleted: toBeDeleted)
+//        }
+//    }
+//
+//    func updateWorkout(workout: WorkoutModel){
+//        if let toBeDeleted = manager.fetchEntities(predicate: NSPredicate(format: "id == %@", workout.id as CVarArg)).first {
+//            toBeDeleted.name = workout.name
+//            toBeDeleted.details = workout.description
+////            toBeDeleted.muscle = workout.targetBodyMuscle.rawValue
+//            manager.save()
+//        }
+//    }
     
-    func updateWorkout(workout: WorkoutModel){
-        if let toBeDeleted = manager.fetchEntities(predicate: NSPredicate(format: "id == %@", workout.id as CVarArg)).first {
-            toBeDeleted.name = workout.name
-            toBeDeleted.details = workout.description
-            toBeDeleted.muscle = workout.targetBodyMuscle.rawValue
-            manager.save()
+    func saveWorkoutsFromJSON(exercises: [[String : AnyObject]]){
+        exercises.forEach { exercise in
+            let workout = Workout(context: manager.context)
+            workout.id = UUID()
+            workout.name = exercise["name"] as? String ?? ""
+            workout.instructions = exercise["instructions"] as? [String] ?? []
+            
+            
         }
     }
     

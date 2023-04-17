@@ -31,4 +31,26 @@ class CoreDataManager: DataController{
         }
     }
     
+    
+    func setupInitialData(){
+        //firsttime app launch
+        let userDefault = UserDefaults.standard
+        if !userDefault.bool(forKey: "FirstLounch"){
+            guard let fileUrl = Bundle.main.path(forResource: "exercises", ofType: "json") else{
+                return
+            }
+            
+            if FileManager.default.fileExists(atPath: fileUrl){
+                guard let content = FileManager.default.contents(atPath: fileUrl) else{
+                    return
+                }
+                let workouts = try? JSONSerialization.jsonObject(with: content, options: [.mutableContainers]) as? [String: AnyObject] 
+                WorkoutEntityManager().saveWorkoutsFromJSON(exercises: workouts?["exercises"] as? [[String: AnyObject]] ?? [])
+            }
+        }
+        
+        
+        
+        
+    }
 }
