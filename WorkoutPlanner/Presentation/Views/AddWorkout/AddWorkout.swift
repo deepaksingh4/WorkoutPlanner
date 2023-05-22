@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct AddWorkout: View {
+    
+    private var viewModel = AddWorkoutViewModel()
     @State private var workoutName: String = ""
     @State private var selected: Int = 0
     var body: some View {
         NavigationView {
             List(0..<1){ index in
                 Section("Select Workout") {
-                    ForEach(0..<5){ index_in in
+                    ForEach(viewModel.workouts) { index_in in
                         HStack {
                             Text("\(index_in)")
                                 .frame(height: 40)
@@ -32,6 +34,9 @@ struct AddWorkout: View {
                 }
                 
             }.listStyle(.plain)
+        }
+        .onAppear(){
+            
         }
         .searchable(text: $workoutName)
     }

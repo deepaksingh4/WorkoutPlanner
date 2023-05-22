@@ -8,7 +8,7 @@
 import Foundation
 
 struct WorkoutDayPlan: Identifiable{
-    var workouts: [WorkoutModel]
+    var workouts: [WorkoutListModel]
     var day: Int
     var id = UUID()
 }

@@ -24,12 +24,19 @@ class WorkoutJournalViewModel: ObservableObject{
                     print("error with type")
                     return
                 }
-                        print("response \(data.name)")
+                print("response \(data.name)")
                 completionHanlder(.success(data.name))
             case .failure(let error):
                 print("Error")
                 completionHanlder(.failure(error))
             }
+        }
+    }
+    
+    func fetchVideoInBackground(){
+        let urlRequest = URLRequest(url: URL(string: "https://com-dex-download-demo.s3.us-east-2.amazonaws.com/demo.mov")!)
+        let downloadTask = URLSession.shared.downloadTask(with: urlRequest) { request, response, error in
+            
         }
     }
 }
@@ -40,12 +47,12 @@ struct Response: Decodable {
 
 
 protocol APIManager {
-   
+    
     func callGetApi(urlString: String, completionHandler: @escaping (Result<Any, Error>) -> Void)
 }
 
 class OrignalAPIManager<T: Decodable>: APIManager{
-   
+    
     
     func callGetApi(urlString: String, completionHandler: @escaping (Result<Any, Error>) -> Void){
         let urlSession = URLSession.shared

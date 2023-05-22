@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 import Combine
- 
+
 class CoreDataManager: DataController{
     var container: NSPersistentContainer = NSPersistentContainer(name: "WorkoutContainer")
     var context: NSManagedObjectContext
@@ -44,8 +44,11 @@ class CoreDataManager: DataController{
                 guard let content = FileManager.default.contents(atPath: fileUrl) else{
                     return
                 }
-                let workouts = try? JSONSerialization.jsonObject(with: content, options: [.mutableContainers]) as? [String: AnyObject] 
-                WorkoutEntityManager().saveWorkoutsFromJSON(exercises: workouts?["exercises"] as? [[String: AnyObject]] ?? [])
+                let workouts = try? JSONSerialization.jsonObject(with: content, options: [.mutableContainers]) as? [String: AnyObject]
+                Task.init{
+                    await WorkoutEntityManager().saveWorkoutsFromJSON(exercises: workouts?["exercises"] as? [[String: AnyObject]] ?? [])
+                }
+                
             }
         }
         

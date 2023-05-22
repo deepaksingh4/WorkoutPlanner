@@ -25,6 +25,7 @@ class CoreEntityManager<T: NSManagedObject>{
     
     func fetchEntities(predicate: NSPredicate = NSPredicate()) -> [T] {
         let request = NSFetchRequest<T>()
+        request.resultType = .dictionaryResultType
         request.entity = T.entity()
         request.predicate = predicate
         var results: [T] = []

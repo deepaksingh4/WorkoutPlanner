@@ -29,7 +29,7 @@ struct WorkoutJournal: View {
                     
                     
 
-                    Text("Add your workout plan")
+                    Text("Create your workout plan")
                         .font(.system(size: 14))
                         .foregroundColor(Theme.Colors.primaryTextColor)
                         .padding(8)

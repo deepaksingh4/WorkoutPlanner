@@ -37,16 +37,16 @@ struct DayPlanner: View {
                         presentSheet.toggle()
                     } label: {
                         Image(systemName: "plus")
-                            .font(.system(size: 50))
+                            .font(.system(size: 60))
                             .foregroundColor(.white)
                             .padding(8)
-                            .background(.red)
+                            .background(.blue)
                             .clipShape(Circle())
                     }.padding(.top,context.size.height - 70)
                         .padding(.leading,context.size.width/2 - 29)
                         .sheet(isPresented: $presentSheet) {
                             AddWorkout()
-                                .presentationDetents([.fraction(0.5)])
+//                                .presentationDetents([.fraction(0.5)])
                                 .presentationDragIndicator(.visible)
                         }
                 }
@@ -57,8 +57,9 @@ struct DayPlanner: View {
                 HStack(alignment: .center){
                     ForEach(viewModel.workoutPlans){ workout in
                         Text("\(workout.day)")
-                            .padding(2)
-                            .modifier(bgCircleWithStroke(backgroundColor: workout.day == selectedDay ? .green : .yellow , strokeColor: .clear, width: 30))
+                            .font(Font.system(size: 24))
+                            .padding(4)
+                            .foregroundColor((workout.day == selectedDay) ? .blue : .gray)
                             .onTapGesture {
                                 selectedDay = workout.day
                             }

@@ -12,5 +12,6 @@ class DayPlannerViewModel: ObservableObject{
     
     func fetchPlannedWorkouts(){
         //fecth from DB and update ht array of workout plan
+//        WorkoutEntityManager().fetchWorkouts()
     }
 }
