@@ -25,7 +25,7 @@ struct WorkoutEntityManager {
 //    }
     
     func fetchWorkouts() -> [WorkoutListModel]{
-        guard let workouts = manager.fetchEntities() as? [[String : Any]] else{
+        guard let workouts = manager.fetchEntities(predicate: NSPredicate()) as? [[String : Any]] else{
             //throw an error
             return []
         }
@@ -77,7 +77,7 @@ struct WorkoutEntityManager {
      "category": "strength"
      }
      */
-    func saveWorkoutsFromJSON(exercises: [[String : AnyObject]]) async {
+    func saveWorkoutsFromJSON(exercises: [[String : AnyObject]]) {
         exercises.forEach { exercise in
             let workout = Workout(context: manager.context)
             workout.id = UUID()
@@ -91,10 +91,11 @@ struct WorkoutEntityManager {
             workout.equipment = exercise["equipment"] as? String ?? ""
             workout.level = exercise["level"] as? String ?? ""
             workout.mechanic = exercise["mechanic"] as? String ?? ""
-            manager.save()
+            manager.context.perform {
+               try? manager.context.save()
+            }
         }
+        print("done")
     }
-    
-    
     
 }

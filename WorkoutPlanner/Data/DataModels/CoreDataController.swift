@@ -18,6 +18,12 @@ class CoreDataManager: DataController{
         }
     }
     
+    lazy var updateContext: NSManagedObjectContext = {
+        let _updateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        _updateContext.parent = self.context
+        return _updateContext
+    }()
+    
     static let instance = CoreDataManager()
     
     
@@ -45,9 +51,9 @@ class CoreDataManager: DataController{
                     return
                 }
                 let workouts = try? JSONSerialization.jsonObject(with: content, options: [.mutableContainers]) as? [String: AnyObject]
-                Task.init{
-                    await WorkoutEntityManager().saveWorkoutsFromJSON(exercises: workouts?["exercises"] as? [[String: AnyObject]] ?? [])
-                }
+                
+                     WorkoutEntityManager().saveWorkoutsFromJSON(exercises: workouts?["exercises"] as? [[String: AnyObject]] ?? [])
+                
                 
             }
         }

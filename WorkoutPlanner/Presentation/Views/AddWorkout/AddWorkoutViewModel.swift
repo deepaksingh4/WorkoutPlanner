@@ -9,7 +9,7 @@ import Foundation
 
 class AddWorkoutViewModel: ObservableObject{
     
-    @Published var workouts = []
+    @Published var workouts: [WorkoutListModel] = []
     
     func fetchWorkouts(){
         workouts = WorkoutEntityManager().fetchWorkouts()

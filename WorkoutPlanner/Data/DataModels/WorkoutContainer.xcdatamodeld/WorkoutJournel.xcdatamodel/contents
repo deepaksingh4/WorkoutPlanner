@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22E261" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="21G419" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Journal" representedClassName="Journal" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
@@ -11,16 +11,15 @@
     </entity>
     <entity name="Workout" representedClassName="Workout" syncable="YES" codeGenerationType="class">
         <attribute name="category" optional="YES" attributeType="String"/>
-        <attribute name="details" attributeType="String"/>
         <attribute name="equipment" optional="YES" attributeType="String"/>
         <attribute name="force" optional="YES" attributeType="String"/>
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="instructions" optional="YES" attributeType="Transformable" customClassName="[String]"/>
+        <attribute name="instructions" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
         <attribute name="level" optional="YES" attributeType="String"/>
         <attribute name="mechanic" optional="YES" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
-        <attribute name="primaryMuscles" optional="YES" attributeType="Transformable" customClassName="[String]"/>
-        <attribute name="secondaryMuscles" optional="YES" attributeType="Transformable" customClassName="[String]"/>
+        <attribute name="primaryMuscles" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
+        <attribute name="secondaryMuscles" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
     </entity>
     <fetchRequest name="getAllWorkout" entity="Workout" includeSubentities="YES" returnDistinctResults="YES"/>
 </model>

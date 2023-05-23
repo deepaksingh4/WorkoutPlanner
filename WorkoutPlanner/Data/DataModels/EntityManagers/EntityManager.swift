@@ -27,7 +27,7 @@ class CoreEntityManager<T: NSManagedObject>{
         let request = NSFetchRequest<T>()
         request.resultType = .dictionaryResultType
         request.entity = T.entity()
-        request.predicate = predicate
+//        request.predicate = predicate
         var results: [T] = []
         do{
             results = try context.fetch(request)
