@@ -10,7 +10,7 @@
 		000B017829D5AFA9009E9BF1 /* AddSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000B017729D5AFA9009E9BF1 /* AddSetView.swift */; };
 		D916B7CC29D6B7AC001C4E46 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D916B7CB29D6B7AC001C4E46 /* Constants.swift */; };
 		D916B7D029D6CB74001C4E46 /* WorkoutContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D916B7CE29D6CB74001C4E46 /* WorkoutContainer.xcdatamodeld */; };
-		D916B7D229D6CCB6001C4E46 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D916B7D129D6CCB6001C4E46 /* CoreDataController.swift */; };
+		D916B7D229D6CCB6001C4E46 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D916B7D129D6CCB6001C4E46 /* CoreDataManager.swift */; };
 		D92975F029DEBE8A00F822FB /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92975EF29DEBE8A00F822FB /* DataController.swift */; };
 		D92975F329DEDFF100F822FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92975F229DEDFF100F822FB /* AppDelegate.swift */; };
 		D92975F529E02E3200F822FB /* EntityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92975F429E02E3200F822FB /* EntityManager.swift */; };
@@ -50,7 +50,7 @@
 		000B017729D5AFA9009E9BF1 /* AddSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSetView.swift; sourceTree = "<group>"; };
 		D916B7CB29D6B7AC001C4E46 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D916B7CF29D6CB74001C4E46 /* WorkoutJournel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WorkoutJournel.xcdatamodel; sourceTree = "<group>"; };
-		D916B7D129D6CCB6001C4E46 /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
+		D916B7D129D6CCB6001C4E46 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		D92975EF29DEBE8A00F822FB /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		D92975F129DED55800F822FB /* WorkoutPlannerDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WorkoutPlannerDebug.entitlements; sourceTree = "<group>"; };
 		D92975F229DEDFF100F822FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 			children = (
 				D92975EE29DEBE6400F822FB /* EntityManagers */,
 				D916B7CE29D6CB74001C4E46 /* WorkoutContainer.xcdatamodeld */,
-				D916B7D129D6CCB6001C4E46 /* CoreDataController.swift */,
+				D916B7D129D6CCB6001C4E46 /* CoreDataManager.swift */,
 				D92975EF29DEBE8A00F822FB /* DataController.swift */,
 			);
 			path = DataModels;
@@ -356,7 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9DCEF3629D4322500A659FD /* WorkoutJournal.swift in Sources */,
-				D916B7D229D6CCB6001C4E46 /* CoreDataController.swift in Sources */,
+				D916B7D229D6CCB6001C4E46 /* CoreDataManager.swift in Sources */,
 				D9457E7529D2DB6100F182B8 /* DayPlanner.swift in Sources */,
 				D9FBA3D629E421BA005D1CC6 /* WorkoutImagesView.swift in Sources */,
 				D916B7D029D6CB74001C4E46 /* WorkoutContainer.xcdatamodeld in Sources */,

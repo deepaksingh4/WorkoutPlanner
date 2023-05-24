@@ -12,6 +12,6 @@ class AddWorkoutViewModel: ObservableObject{
     @Published var workouts: [WorkoutListModel] = []
     
     func fetchWorkouts(){
-        workouts = WorkoutEntityManager().fetchWorkouts()
+        workouts = WorkoutEntityManager().fetchAllWorkouts()
     }
 }

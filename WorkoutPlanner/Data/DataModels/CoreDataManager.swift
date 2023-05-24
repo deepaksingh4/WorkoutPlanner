@@ -4,19 +4,26 @@
 //
 //  Created by Deepak Singh07 on 3/31/23.
 //
-
+/**
+ - creates coreData stack
+ - hold contexts
+ -
+ */
 import Foundation
 import CoreData
 import Combine
 
 class CoreDataManager: DataController{
     var container: NSPersistentContainer = NSPersistentContainer(name: "WorkoutContainer")
-    var context: NSManagedObjectContext
-    {
-        get {
-            return container.viewContext
-        }
-    }
+    lazy var context: NSManagedObjectContext = {
+        return container.viewContext
+    }()
+    
+    
+    lazy var backgroundContext: NSManagedObjectContext = {
+        return container.newBackgroundContext()
+    }()
+    
     
     lazy var updateContext: NSManagedObjectContext = {
         let _updateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
@@ -36,7 +43,7 @@ class CoreDataManager: DataController{
             print("Unable to load")
         }
     }
-    
+    //this should be an utility method for setup
     
     func setupInitialData(){
         //firsttime app launch
@@ -52,7 +59,7 @@ class CoreDataManager: DataController{
                 }
                 let workouts = try? JSONSerialization.jsonObject(with: content, options: [.mutableContainers]) as? [String: AnyObject]
                 
-                     WorkoutEntityManager().saveWorkoutsFromJSON(exercises: workouts?["exercises"] as? [[String: AnyObject]] ?? [])
+                WorkoutEntityManager().saveWorkoutsFromJSON(exercises: workouts?["exercises"] as? [[String: AnyObject]] ?? [])
                 
                 
             }

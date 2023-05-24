@@ -15,20 +15,32 @@ struct WorkoutEntityManager {
         self.manager = CoreEntityManager(ctx: CoreDataManager.instance.context)
     }
     
-//    func saveWorkout(workout: WorkoutModel){
-//        let workoutEntity = Workout(context: manager.context)
-//        workoutEntity.name = workout.name
-//        //        workoutEntity.muscle = workout.targetBodyMuscle.rawValue
-//        workoutEntity.details = workout.description
-//        workoutEntity.id = workout.id
-//        manager.save()
-//    }
+    //    func saveWorkout(workout: WorkoutModel){
+    //        let workoutEntity = Workout(context: manager.context)
+    //        workoutEntity.name = workout.name
+    //        //        workoutEntity.muscle = workout.targetBodyMuscle.rawValue
+    //        workoutEntity.details = workout.description
+    //        workoutEntity.id = workout.id
+    //        manager.save()
+    //    }
     
     func fetchWorkouts() -> [WorkoutListModel]{
         guard let workouts = manager.fetchEntities(predicate: NSPredicate()) as? [[String : Any]] else{
             //throw an error
             return []
         }
+        do{
+            let data = try JSONSerialization.data(withJSONObject: workouts, options: .prettyPrinted)
+            let workoutModels = try JSONDecoder().decode([WorkoutListModel].self, from: data)
+            return workoutModels
+        }catch(let error){
+            print(error.localizedDescription)
+            return []
+        }
+    }
+    
+    func fetchAllWorkouts() -> [WorkoutListModel]{
+        let workouts = manager.fetchEntityDictionaries(predicate: NSPredicate())
         do{
             let data = try JSONSerialization.data(withJSONObject: workouts, options: .prettyPrinted)
             let workoutModels = try JSONDecoder().decode([WorkoutListModel].self, from: data)
@@ -77,25 +89,23 @@ struct WorkoutEntityManager {
      "category": "strength"
      }
      */
-    func saveWorkoutsFromJSON(exercises: [[String : AnyObject]]) {
-        exercises.forEach { exercise in
-            let workout = Workout(context: manager.context)
-            workout.id = UUID()
-            workout.name = exercise["name"] as? String ?? ""
-            workout.instructions = exercise["instructions"] as? [String] ?? []
-            workout.force = exercise["force"] as? String ?? ""
-            workout.category = exercise["category"] as? String ?? ""
-            workout.level = exercise["level"] as? String ?? ""
-            workout.primaryMuscles = exercise["primaryMuscles"] as? [String] ?? []
-            workout.secondaryMuscles = exercise["secondaryMuscles"] as? [String] ?? []
-            workout.equipment = exercise["equipment"] as? String ?? ""
-            workout.level = exercise["level"] as? String ?? ""
-            workout.mechanic = exercise["mechanic"] as? String ?? ""
-            manager.context.perform {
-               try? manager.context.save()
-            }
+    func saveWorkoutsFromJSON(exercises: [[String : Any]]) {
+        var exercisesWithID = exercises.map { object in
+            var obj = object
+            obj["id"] = UUID()
+            return obj
         }
-        print("done")
+        do{
+            let batchInsertRequest = NSBatchInsertRequest(entityName: "Workout", objects: exercisesWithID)
+            let insertResult = try manager.context.execute(batchInsertRequest)
+            if let result = insertResult as? NSBatchInsertResult,
+               let success = result.result as? Bool,
+               success {
+                print("Inserted")
+            }
+        }catch let error{
+            print(error)
+        }
     }
     
 }
