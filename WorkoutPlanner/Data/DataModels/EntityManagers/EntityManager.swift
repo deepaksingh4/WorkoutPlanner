@@ -19,7 +19,6 @@ protocol EntityManager{
     func batchInsert(data: [[String: Any]]) -> Bool
     func deleteObject(with id: UUID) -> Bool
     func fetchAllObjects() -> [T]
-    
 }
 
 extension EntityManager{
